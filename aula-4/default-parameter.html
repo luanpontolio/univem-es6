@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Default Parameter</title>
+</head>
+<body>
+    <script>
+        // No es5 se não passarmos os paramentro vejam o que ele irá printar 
+        // no console `undefinied`. Uma opção era criarmos valores default da seguinte 
+        // maneira.
+        // function hello(name, surname) {
+        //     name = name || 'Luan';
+        //     surname = surname || 'Silveira';
+
+        //     console.log(`Olá eu sou o ${name} ${surname}`);
+        // }
+
+        // hello();
+        // > Olá eu sou Luan Silveira
+
+        function hello(name = 'Luan', surname = 'Silveira') {
+            console.log(`Olá eu sou o ${name} ${surname}`);
+        }
+
+        hello('Pedro');
+        // > Olá eu sou Pedro Silveira
+    </script>
+</body>
+</html>
