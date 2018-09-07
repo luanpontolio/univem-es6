@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aula - template literal</title>
+    <style>
+        .text {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // template literal permite vc concatenar string e variaveis 
+        // de maneira bem mais facil.
+        const items = {
+            eat: 'pizza',
+            drink: 'cerveja'
+        };
+
+        const textOld = "Eu irei comer uma " + items.eat + " e beber uma "+ items.drink;
+        console.log(textOld);
+
+        const textNew = `Eu irei comer uma ${items.eat} e beber uma ${items.drink}`;
+        console.log(textNew);
+    </script>
+</body>
+</html>

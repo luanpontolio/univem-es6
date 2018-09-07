@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aula - This arrow function</title>
+</head>
+<body>
+    <button id="btn">Click aqui!</button>
+    <script>
+        // Forma normal, usando function quando utilizamos o this
+        // ele representa o proprio botão.
+        // const btn = document.getElementById("btn");
+        // btn.addEventListener("click", function(){
+        //    console.log(this);
+        // })
+
+        // Agora quando utilizamos a arrow function, o seu escopo será todo
+        // o Window, pois o arrow fuction pega todo o contexto que minha função esta.
+        // const btn = document.getElementById("btn");
+        // btn.addEventListener("click", () => {
+        //    console.log(this);
+        // })
+
+        // const sandwich = {
+        //     bread: 'white',
+        //     cheese: 'cheddar',
+
+        //     prepare: function(){
+        //         return `I want a sandwich with ${this.bread} bread and ${this.cheese} cheese.`
+        //     },
+
+        //     make: function(){
+        //         var _this = this;
+        //         window.setTimeout(function() {
+        //             console.log(_this.prepare());
+        //         }, 500);
+        //     }      
+        // }
+
+        const sandwich = {
+            bread: 'white',
+            cheese: 'cheddar',
+
+            prepare: function(){
+                return `I want a sandwich with ${this.bread} bread and ${this.cheese} cheese.`
+            },
+
+            make: function(){
+                // Em uma arrow function o this compreende a topo escopo de sandwich
+                // então conseguimos acessar a função prepare();
+                window.setTimeout(() => {
+                    console.log(this.prepare());
+                }, 500);
+            }      
+        }
+
+        const btn = document.getElementById("btn");
+        btn.addEventListener("click", function() {
+            sandwich.make();
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Template html fragment</title>
+</head>
+<body>
+    <div id="list"></div>
+    <script>
+        const article = {
+            title: "Lorem ipsum",
+            subtitle: "Neque porro quisquam est qui dolorem",
+            body: "é simplesmente uma simulação de texto da indústria " +
+            "tipográfica e de impressos, e vem sendo utilizado desde o século" +
+            " XVI, quando um impressor desconhecido pegou uma bandeja de tipos"+
+            " e os embaralhou para fazer um livro de modelos de tipos.",
+            tags: ["es6", "javascript", "univem"]
+        }
+
+        function nameAuthor(name){
+            return (name) ? name : 'unknow';
+        }
+
+        const htmlText = `
+            <article>
+                <header>
+                    <h1>${article.title}</h1>
+                </header>
+                <section>
+                   <p>${article.subtitle}</p>
+                </section>
+                <footer>
+                    <ul>
+                        ${article.tags.map((tag) => `<li>${tag}</li>`).join("")}
+                    </ul>
+                    <p>Author: ${nameAuthor(article.author)}</p>
+                </footer>
+            </article>
+        `;
+
+        document.body.innerHTML = htmlText;
+    </script>
+</body>
+</html>

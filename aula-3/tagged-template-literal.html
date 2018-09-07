@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tagged template literal</title>
+    <style>
+        .blue {
+            text-align: center;
+            font-size: 20px;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const city = 'Marilia';
+        const something = 'Bolacha';
+        const otherthing = 'TI';
+
+        // Nova feature do es6 que se chama rest, que são estes 3 pontos.
+        function blue(template, ...values){
+            // reduce é uma função que ira percorrer nosso array e retornar unico valor
+            // ele possui 3 paramentros são eles o accumulator, part, count
+            // accumulator = funciona como um acumulador dos valores.
+            // part = representa a parte que ele estara trabalhando no momento.
+            // i = que é um contator.
+            return template.reduce((accumulator, part, i) => {
+                // como values é um array temos que adicionar nosso contator `i` que sempre terá um
+                // a mais pois ele representa o array template, então fazemos i - 1. 
+                // console.log(accumulator);
+                // console.log(values[i - 1]);
+                // console.log(part);
+
+
+                return `
+                    ${accumulator}
+                    <span class="blue">${values[i - 1]}</span>
+                    ${part}
+                `
+
+            })
+        }
+        
+        // utilizando tagged template literal precisamos adicionar nossa função na frente 
+        // do nosso template literal, 
+        const text = blue`Eu moro em ${city}, cidade da ${something} e da ${otherthing}!`;
+
+        document.body.innerHTML = text;
+    </script>
+</body>
+</html>

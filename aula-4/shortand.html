@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aula - Shortand Properties </title>
+</head>
+<body>
+    <script>
+        const firstName = 'Luan';
+        const lastName = 'Pontolio';
+        const age = 25;
+
+        // Melhoria do es6: antes se quisemos criar um objeto pessoa por exemplo
+        // teriamos que fazer a seguinte coisa:
+        // const person = {
+        //     firstName: firstName,
+        //     lastName: lastName,
+        //     age: age
+        // };
+
+        // Agora no es6 podemos criar da seguinte maneira
+        const person = {
+            firstName,
+            lastName,
+            age,
+
+            hello: function(){
+                console.log("Hello");
+            }
+        } 
+
+        console.log(person);
+        person.hello();
+    </script>
+</body>
+</html>

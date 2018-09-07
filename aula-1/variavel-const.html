@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aula - const</title>
+</head>
+<body>
+    <script>
+        // Outro exemplo que possuimos é o tipo const
+        const number = 25;
+
+        // Se tentarmos atribuir um novo valor para ela será apresentada um erro que 
+        // eu não posso modificala.
+        // number = 30;
+
+        // porem existe uma leve discusão sobre const ser imutavel ou seja que ser valor não pode ser alterado.
+        const person = {
+            name: 'Luan',
+            age: 25
+        }
+
+        console.log(person);
+
+        // o que é errado pois se atribuirmos um novo valor para um dos atributos do objeto person
+        // veja que o mesmo será alterado.
+        // A menos que freezarmos o objeto ele sera imutavel, ex.: Object.freeze(person);
+        person.age = 26;
+
+        console.log(person);
+    </script>
+</body>
+</html>

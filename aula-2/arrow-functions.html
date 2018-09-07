@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aula - Arrow functions</title>
+</head>
+<body>
+    <script>
+        // maneira antiga
+        // function animal(){
+        //     console.log("auuu");
+        // }
+        // animal();
+
+        // forma nova;
+        // const animal = () => {
+        //     console.log("auauaua");
+        // }
+        // sound();
+
+        var arrow = [1, 2, 3, 4, 5];
+
+
+        var mult1 = arrow.map((item) => {
+            return item * 2;
+        })
+
+        var mult2 = arrow.map(item => {
+            return item * 4;
+        })
+
+        var mult3 = arrow.map(item => item * 8);
+
+        var mult4 = arrow.
+                         filter(item => item % 2 == 0).
+                         map(item => item * 2);
+
+        console.log(mult1);
+
+        console.log(mult2);
+
+        console.log(mult3);
+
+        console.log(mult4);
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aula - let</title>
+</head>
+<body>
+    <script>
+        // "var" são chamadas de function scoped.
+        var animal = 'cat';
+        console.log(animal);
+        // Declarar uma variavel do tipo let com o mesmo nome vai apresentar o seguinte erro:
+        // Identifier 'animal' has already been declared
+        // let animal = 'cat';
+
+        // Agora quando declaramos a variavel let dentro de um bloco {} ai mudamos seu escopo e
+        // se fizermos um console.log(animal) veja os resultados
+        {
+            let animal = 'dog';
+            console.log(animal);
+        }
+
+        console.log(animal);
+    </script>
+</body>
+</html>
