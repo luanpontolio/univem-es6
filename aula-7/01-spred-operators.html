@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Spred Operators</title>
+</head>
+<body>
+    <script>
+        let front = ["react", "vue", "angular"];
+        let back = ["ruby", "python", "nodejs"];
+
+        // Spred operator são esses ...(3 pontos) que precedem algum elemento como uma 
+        // string, como no exemplo:
+        // console.log([..."luan"]);
+        // console.log(...front);
+
+        // se precisasemos concatenar os elementos com spred operator
+        // podemos fazer da seguinte maneira:
+        // let fullstack = [...front, ...back];
+        let fullstack = [...front, "polymer", ...back];
+        console.log(fullstack);
+    </script>
+</body>
+</html>

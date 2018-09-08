@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Spread operator in functions</title>
+</head>
+<body>
+    <script>
+        function makeFood(bread, cheese, meat){
+            console.log(`Seu lanche com pão ${bread}, queijo ${cheese} e ${meat} está pronto!`);
+        }
+
+        const ingrediets = ["branco", "cheeder", "baicon"];
+
+        // Como nossa função espera 3 parametros podemos passar nosso
+        // array utilizando o spred da seguinte forma:
+        makeFood(...ingrediets);
+        // pois assim ele ira desmembrar nosso array transformando os nos nossos
+        // parametros.
+    </script>
+</body>
+</html>
