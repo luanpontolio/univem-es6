@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Destructuring Swap Variable</title>
+</head>
+<body>
+    <script>
+        let numOne = 25;
+        let numTwo = 23;
+
+        // swap de variaveis é quando precisamos trocar um valor de variaveis 
+        // sem criar uma outra como auxiliar, assim como no Ruby, Python entre outras.
+
+        [numOne, numTwo] = [numTwo, numOne];
+
+        console.log(`Numero 1 o valor era 25 mas agora é ${numOne}`);
+        console.log(`Numero 2 o valor era 23 mas agora é ${numTwo}`);
+    </script>
+</body>
+</html>
