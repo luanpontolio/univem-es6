@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Array new features</title>
+</head>
+<body>
+    <ul>
+        <li>Pizza</li>
+        <li>Ovo</li>
+        <li>Coca-cola</li>
+    </ul>
+
+
+    <script>
+        // Array.from
+        // Array from irá transformar nossa string em uma array com cada letra.
+        const text = "luan";
+        console.log(Array.from(text));
+
+        // Agora convertendo meu NodeList em um Array possuo acesso a todos os
+        // metodo do array.
+        const list = document.querySelectorAll("ul>li");
+        const listArray = Array.from(list);
+        console.log(listArray);
+
+        // Selecionando o todos os nomes dos items do meu array.
+        const names = listArray.map((item) => item.textContent);
+        console.log(names);
+    </script>
+</body>
+</html>

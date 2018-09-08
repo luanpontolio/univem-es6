@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Array find and findIndex</title>
+</head>
+<body>
+    <script>
+        // Array.find and Array.findIndex
+       
+        // Diferença entre o .find e o .filter é que o .find o primeiro que ele achar
+        // ele já para e lhe retorna o valor, enquanto o .filter buscaria todos os elementos
+        // e lhe retornara true ou false para todos os elementos do array.
+
+        const sampleArray = [4, -5, 0, -1];
+        // .find irá retornar o primeiro valor encontrado no array.
+        const underZero = sampleArray.find(x => x < 0);
+        console.log(underZero);        
+
+        // .findIndex irá retornar o primeiro index encontrado.
+        const underZeroIndex = sampleArray.findIndex(x => x < 0);
+        console.log(underZeroIndex);
+
+        const data = [
+            {
+                name:  'Luan',
+                age: 25,
+                job: 'Developer'
+            },
+            {
+                name: 'João',
+                age: 23,
+                job: 'Ux design'
+
+            }
+        ]
+
+        const luan = data.find(person => person.name === "Luan");
+        const luanIndex = data.findIndex(person => person.name === "Luan");
+
+        console.log(luanIndex);    
+    </script>
+</body>
+</html>
