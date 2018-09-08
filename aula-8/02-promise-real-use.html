@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Promise real world</title>
+</head>
+<body>
+    <script>
+        // Star Wars API, utilizando o método .fetch novo método do es6 que 
+        // é um método ajax.
+        var swApiPeople = fetch("https://swapi.co/api/people/?format=jso");
+
+        // Status da promises:
+        // -> pending;
+        // -> resolved;
+        // -> reject;
+
+        // console.log(swApiPeople);
+
+        swApiPeople
+                  .then(data => data.json())
+                  .then((data) => data.results)
+                  .then(data => data.map(item => item.name))
+                  .then(data => console.log(data))
+                  .catch(error => error);
+
+    </script>
+</body>
+</html>

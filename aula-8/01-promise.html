@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pormises</title>
+</head>
+<body>
+    <script>
+        // A promisse é um objeto que terá que fazer algo no futuro, ou seja,
+        // uma promessa, ela é interessante para tabalharmos com assincronas.
+
+        // Ela é bastante importante para evitar o callback hell(inception de callbacks kkk).
+        // var defer = new Promise((resolve, reject) => {
+        //     if(true){
+        //         resolve("Olá, esta funcionando");
+        //     } else{
+        //         reject("Error!!");
+        //     }
+        // });
+
+        var defer = new Promise((resolve, reject) => {
+            setTimeout(()=>{
+                if(true){
+                    resolve("Olá, esta funcionando");
+                } else{
+                    reject("Error!!");
+                }
+            }, 2000)
+        });
+
+        // com promisse para acessarmos o resultado da ação que realizamos
+        // fazemos isso utilizando o método .then que retornará quando a resposta 
+        // for sucesso, porém se prescisarmos obter o erro utilizamos o método .catch,
+        // fazendo assim um encadeamento de métodos.
+        defer
+            .then(data => {
+                console.log(data);
+                return 'lol';
+            })
+            .then(data => console.log(data))
+            .catch(error => console.log(error))
+
+
+    </script>
+</body>
+</html>

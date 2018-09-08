@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Promise Multiple</title>
+</head>
+<body>
+    <script>
+        // Primeira promise resolvida em 2 segundos
+        var currency = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve({"currency": 'euro', "value": 4.70})
+            }, 2000);
+        });
+
+        // Segunda promise resolvida em 0.6 segundos.
+        var countries = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve(["England", "Ireland", "Germany"])
+            }, 600);
+        });
+
+        // Metodo .all da promise permite eu trabalhar com todas
+        // as promises que possuo. 
+        // Depois das duas forem resolvidadas ai ele fará uma ação.
+        // Pois ele é ordenado pelo de maior tempo.
+        // Promise
+        //        .all([currency, countries])
+        //        .then(responses => {
+        //            console.log(responses);
+        //        })
+
+        // Metodo .race da promise irá trabalhar com todos as promises,
+        // porém ele irá retornar assim que a primeira for resolvida.
+        // Isto é util se vc estiver fazendo requisição de varios lugares
+        // porém somente a primeira que importa.   
+        Promise
+               .race([currency, countries])
+               .then(responses => {
+                   console.log(responses);
+               })
+    </script>
+</body>
+</html>
