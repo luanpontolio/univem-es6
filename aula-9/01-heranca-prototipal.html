@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Herança Prototipal</title>
+</head>
+<body>
+    <script>
+        // Está função Animal que recebe parametros kind e sound e os 
+        // atribuis para suas propriedades kind e sound, que servem como 
+        // métodos set e get em seu método construtor, tornando esta função uma classe.
+        function Animal(kind, sound){
+            // constructor
+            this.kind = kind;
+            this.sound = sound;
+        }
+
+        // Sempre que acessamos o objeto animal temos acesso a todos seus metodos
+        // pois estamos acessando o prototype da classe.
+        // Ainda falando de prototype, podemos criar uma função dentro de prototype
+        // da classe animal, exemplo:
+        Animal.prototype.eat = function(){
+            // método da classe
+            // forma de método prototipal.
+            console.log(`${this.sound} estou comendo!`);
+        }
+
+        var animal = new Animal('dog', 'auau');
+       
+        console.log(animal.kind);
+        console.log(animal.sound);
+    </script>
+</body>
+</html>

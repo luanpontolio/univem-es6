@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Herança Prototipal</title>
+</head>
+<body>
+    <script>
+
+        class Animal {
+            constructor(name){
+                this.name = name;
+            }
+
+            hello(){
+                console.log(`Eu sou o ${this.name}!`);   
+            }
+        }
+        
+        class Dog extends Animal {
+            constructor(name, sound){
+                // necessario chamar o método super
+                // que inicializará nossa extensão de Animal.
+                super(name);
+                this.sound = sound;
+            }
+
+            bark(){
+                console.log(`${this.sound}, Eu sou o ${this.name} `)
+            }
+        }
+
+        // Instanciando um novo objeto de Dog 
+        var dog = new Dog('jake', 'auau');
+    </script>
+</body>
+</html>

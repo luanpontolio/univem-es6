@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Herança Prototipal</title>
+</head>
+<body>
+    <script>
+        // Transformar esta função em uma classe ES6.
+        // function Animal(kind, sound){
+        //     // constructor
+        //     this.kind = kind;
+        //     this.sound = sound;
+        // }
+
+        // Animal.prototype.eat = function(){
+        //     console.log(`${this.sound} estou comendo!`);
+        // }
+
+        class Animal {
+            // método principal de uma classe é o constructor
+            // que neste caso será iniciado pelos parametros kind e sound
+            constructor(kind, sound){
+                this.kind = kind;
+                this.sound = sound;
+            }
+
+            // Iniciamos os métodos utilizando o padrão shorthand.
+            eat(food = 'Ração'){
+                console.log(`${this.sound} estou comendo minha ${food}!`);   
+            }
+
+            // Criando método estatico da classe que só poderá ser acessado pela
+            // classe é não por seus objetos.
+            static info(){
+                console.log("este é um metodo da classe Animal");
+            }
+
+            // temos os métodos get
+            get name(){
+                console.log("Meu nome é jake");
+            }
+
+            // temos os métodos set
+            set nickname(nick){
+                this.nick = nick; 
+            }
+        }
+
+        var animal = new Animal('dog', 'auau');
+       
+        console.log(animal.kind);
+        console.log(animal.sound);
+    </script>
+</body>
+</html>
