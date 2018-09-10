@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>For...of</title>
+</head>
+<body>
+    <script>
+        // Pequenas diferenças
+        // iterable = são elemento dos quais podemos iterar
+        // iterators = são as formas que podemos iterar.
+        // const array = [1,2,3,4,5,6];
+
+        const txt = 'Luan';
+        const it = txt[Symbol.iterator](); // realiza a a chamada do método de dentro iterator
+
+        // o que possibilita acessar o método
+        console.log(it.next());
+        console.log(it.next());
+        console.log(it.next());
+        console.log(it.next());
+        console.log(it.next()); // Apenas quando o valor for undefined ele retornara a chave done: false.
+
+        // Sendo assim podemos utilizar o loop for..of
+        // um loop mais inteligente que permite agente parar sua execução
+        // até o momento que encontrarmos algo.
+        for(letter of txt){
+            console.log(letter);
+            if(letter === 'a') break;
+        }
+
+    </script>
+</body>
+</html>

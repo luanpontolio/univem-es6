@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Generator</title>
+</head>
+<body>
+    <script>
+        // Assim como em Ruby ou outras linguagens o javascript possui
+        // o generators.
+        
+        // funcção simples que ira retornar o console.log dos 3 nomes.
+        // function genNames(){
+        //     console.log("Luan");
+        //     console.log("Pedro");
+        //     console.log("Rafael");
+        // }
+
+        // genNames();
+
+        // Para criar um função do tipo generator
+        // precisamos adicionar * em frente a função
+        function* genNames(){
+            // e onde erá console.log trocaremos por yield
+            // que funciona como uma especie de return mas ele
+            // seguira sua iteração.
+            yield "Luan";
+            yield "Pedro";
+            yield "Rafael";
+        }
+
+        const names = genNames();
+        // names será um Generator somente quando executarmos ele os retornara
+        // algo;
+        console.log(names);
+
+        console.log(names.next());
+        console.log(names.next());
+        console.log(names.next());
+    </script>
+</body>
+</html>

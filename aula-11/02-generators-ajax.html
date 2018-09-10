@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Generators with ajax</title>
+</head>
+<body>
+    <script>
+       // Para explicar melhor o funcionamento de Generators
+       // vamos ver seu uso com ajax, temos uma função ajax que recebe o
+       // paramentro url 
+       function ajax(url) {
+            fetch(url)
+                    .then(data => data.json())
+                    .then(data => console.log(data.results));
+       }
+
+       // https://swapi.co/api/people/?format=json
+
+       function ajaxGen(){
+           console.log("Buscando posts...");
+
+           ajax("https://swapi.co/api/films/?format=json");
+       }
+
+       ajaxGen();
+    </script>
+</body>
+</html>
