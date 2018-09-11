@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Proxies</title>
+</head>
+<body>
+    <script>
+        // O objeto Proxy é usado para definir comportamentos 
+        // customizados para operações fundamentais (por exemplo, pesquisa de propriedade, 
+        // atribuição, enumeração, invocação de função, etc.).
+        // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Proxy
+        
+        let obj = {
+            name: "luan",
+            age: 25
+        }
+
+        // Para instacia-lo precisamos passar os parametros targe e o handler.
+        // proxy será uma copia de obj porem ao chamar o .name como o nosso handler é o
+        // método `get` de name quando acessarmos `.name` ele passará a executar o `console.log`
+        const proxy = new Proxy(obj, {
+            get(target, name){
+                console.log(`Alguem esta pedindo ${name}`);
+                return target[name];
+            },
+            // Chamando o método `set` estamos alterando todo ser comportamento
+            set(target, name, value) {
+                console.log(`Alguem esta mudando ${name}`);
+                target[name] = value;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -8,24 +8,55 @@
 </head>
 <body>
     <script>
-       // Para explicar melhor o funcionamento de Generators
-       // vamos ver seu uso com ajax, temos uma função ajax que recebe o
-       // paramentro url 
-       function ajax(url) {
+        // Para explicar melhor o funcionamento de Generators
+        // vamos ver seu uso com ajax, temos uma função ajax que recebe o
+        // paramentro url 
+        // function ajax(url) {
+        //     fetch(url)
+        //             .then(data => data.json())
+        //             .then(data => console.log(data.results));
+        // }
+
+        function ajax(url) {
             fetch(url)
                     .then(data => data.json())
-                    .then(data => console.log(data.results));
-       }
+                    .then(data => dados.next(data.results));
+        }
 
-       // https://swapi.co/api/people/?format=json
+        // https://swapi.co/api/people/?format=json
 
-       function ajaxGen(){
-           console.log("Buscando posts...");
+        // Se realizarmos essas requisições veremos que 
+        // ele não irá seguir a ordem.
+        // function ajaxGen(){
+        //    console.log("Buscando films...");
+        //    ajax("https://swapi.co/api/films/?format=json");
 
-           ajax("https://swapi.co/api/films/?format=json");
-       }
+        //    console.log("Buscando people...");
+        //    ajax("https://swapi.co/api/people/?format=json")
+        // }
 
-       ajaxGen();
+        function* ajaxGen(){
+           console.log("Buscando films...");
+           const films = yield ajax("https://swapi.co/api/films/?format=json");
+           console.log(films);
+
+           console.log("Buscando people...");
+           const people = yield ajax("https://swapi.co/api/people/?format=json");
+           console.log(people);
+
+           console.log("Buscando starships...");
+           const starships = yield ajax("https://swapi.co/api/starships/?format=json");
+           console.log(starships);
+        }
+
+        const dados = ajaxGen();
+        // Quando executarmos ele irá apenas fazer o ajax de films
+        // para executar todos precisamos chamar o método .next dentro do segundo 
+        // .then
+        dados.next();
+        // Desta forma ele buscará as informações em sequencia 
+        // facilitando se precisarmos trabalhar com fluxos.
+       
     </script>
 </body>
 </html>
