@@ -8,7 +8,45 @@
 </head>
 <body>
     <script>
-        // Sets.
+        // Sets, serve para guardar objetos de qualquer tipo
+
+        // esta linha irá criar um objeto do tipo set igual a esse:
+        // { 'tony', 'steve', 'logan' }
+        let mySet = new Set(['tony', 'steve', 'logan']);
+        
+        // add
+        mySet.add('bruce');
+        mySet.add('bruce');
+        mySet.add('bruce');
+        mySet.add('logan');
+
+        // delete
+        mySet.delete('bruce');
+
+        // has
+        console.log(mySet.has("tony"));
+        console.log(mySet.has("buce"))
+
+        // Ele é bem parecido com o array porém sua principal diferença
+        // é que ele não possui indice então se buscarmos pelo indice
+        // ele retornará undefinied, exemplo:
+        console.log(mySet[1]);
+
+        // Set também é um interator, podendo acessar todos os métodos do iterator.
+        let it = mySet.values();
+        // console.log(it.next())
+        // console.log(it.next())
+        // console.log(it.next())
+        // console.log(it.next())
+
+        for (name of it){
+            console.log(name)
+        }
+
+        // Converter mySet em Array
+        console.log(Array.from(mySet));
+
+        mySet2 = new Set([1,2,3,4]);
     </script>
 </body>
 </html>

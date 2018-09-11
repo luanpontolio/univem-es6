@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weakset intro</title>
+</head>
+<body>
+    <script>
+        // weakset similar ao set
+        let obj1 = {
+            name: 'Luan',
+            age: 25
+        }
+
+        let obj2 = {
+            name: 'Jose',
+            age: 20
+        }
+
+        // WeakSet só aceita objetos
+        // Não é possivel pegar seus valores atraves do método .values()
+        let ws = new WeakSet([obj1, obj2]);
+
+
+    </script>
+</body>
+</html>
