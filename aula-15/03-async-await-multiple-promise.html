@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Async Await Multiple Promise</title>
+</head>
+<body>
+    <script>
+        // O que fazer quando tiver mais de uma promise.
+        async function getFilms(users){
+            const promises = users.map(user => fetch(`https://api.github.com/users/${user}`))
+            console.log(promises)
+
+            // Usa-se o await em Promise.all 
+            const people = await Promise.all(promises)
+            console.log(people);
+        }
+
+        getFilms(['luan', 'estevammr']);
+    </script>
+</body>
+</html>
