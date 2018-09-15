@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ES7 PadStart e PadEnd</title>
+</head>
+<body>
+    <script>
+        // Esssas funções causaram um bug em varias bibliotecas do
+        // npm, pois o dono da funcionalidade havia deletado as funções
+        // ocasionando em varios erros.
+
+        // String.prototype.padStart
+        // String.prototype.padEnd
+
+        // As duas funções esperam os seguintes parametros o tamanho desejado e a string que
+        // vamos preencher.
+
+        // Preenche no incio da string 4 espaços que estão faltando
+        console.log('Hi'.padStart(6, 'Oi'))
+
+        // Preenche no final da string 4 espaços que estão faltando.
+        console.log('Hi'.padEnd(6, 'Oi'))
+
+
+    </script>
+</body>
+</html>

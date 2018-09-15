@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Array.prototype.includes</title>
+</head>
+<body>
+    <script>
+        const type = ["cpf", "cnpj"];
+
+        // Antes
+        function isValidDocument(doc){
+            return type.indexOf(doc) > -1;
+        }
+
+        // Novo
+        // function isValidDocument(doc){
+        //     return type.includes(doc);
+        // }
+
+        console.log(isValidDocument('cpf'));
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Object.entries</title>
+</head>
+<body>
+    <script>
+        // Object entries
+        const animals = {
+            dog: 4,
+            cat: 2,
+            fish: 5
+        }
+
+        // Antes
+        console.log(Object.keys(animals));
+
+        // Agora
+        // Object.entries irá transformar o objeto em uma Array de Arrays
+        // transformando sua chave no primeiro elemento do array e o valor no segundo
+        // exemplo: [["dog", 3]...]
+        console.log(Object.entries(animals));
+
+        // Utilizando o object.entries que irá gerar um array de com chave e valor
+        // assim é possível utilizar o Map para navagar no array utilizando seus métodos. 
+        const animalsMap = new Map(Object.entries(animals));
+
+        console.log(animalsMap.size);
+        console.log(animalsMap.has('cat'));
+        console.log(animalsMap.has('bird'));
+        console.log(animalsMap.get('dog'));
+    </script>
+</body>
+</html>
