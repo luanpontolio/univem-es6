@@ -9,18 +9,19 @@
 <body>
     <script>
         let front = ["react", "vue", "angular"];
-        let back = ["ruby", "python", "nodejs"];
+        let back  = ["ruby", "python", "nodejs"];
+        
+        let fullStack = front.concat(back);
+        console.log(fullStack);
 
-        // Spred operator são esses ...(3 pontos) que precedem algum elemento como uma 
+
         // string, como no exemplo:
         // console.log([..."luan"]);
-        // console.log(...front);
 
-        // se precisasemos concatenar os elementos com spred operator
-        // podemos fazer da seguinte maneira:
+
         // let fullstack = [...front, ...back];
-        let fullstack = [...front, "polymer", ...back];
-        console.log(fullstack);
+        // let fullstack = [...front, "polymer", ...back];
+        // console.log(fullstack);
     </script>
 </body>
 </html>

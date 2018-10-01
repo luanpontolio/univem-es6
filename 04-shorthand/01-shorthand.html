@@ -12,36 +12,36 @@
         const lastName = 'Pontolio';
         const age = 25;
 
-        // Melhoria do es6: antes se quisemos criar um objeto pessoa por exemplo
-        // teriamos que fazer a seguinte coisa:
-        // const person = {
-        //     firstName: firstName,
-        //     lastName: lastName,
-        //     age: age
-        // };
+        const person = {
+            firstName: firstName,
+            lastName: lastName,
+            age: age
+        };
 
-        // Agora no es6 podemos criar da seguinte maneira
+        const firstName = 'Luan';
+        const lastName = 'Pontolio';
+        const age = 25;
+
+        const person = {
+            firstName,
+            lastName,
+            age,
+        } 
+
         // const person = {
         //     firstName,
         //     lastName,
         //     age,
-
-        // } 
-
-         const person = {
-            firstName,
-            lastName,
-            age,
             // Antes como criavamos uma função de objeto
             // hello: function(){
             //     console.log("Hello");
             // }
 
             // Agora minha propriedade hello é a função
-            hello(){
-                console.log("Hellooooo!")
-            }
-        } 
+            //hello(){
+              //  console.log("Hellooooo!")
+            //}
+        //} 
 
         console.log(person);
         person.hello();

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Destructuring Object</title>
+</head>
+<body>
+    <script>
+        const data = {
+            name: 'Luan',
+            lastName: 'Pontolio',
+            age: 25,
+            blog: 'http://pontolio.herkuapp.com',
+            social: {
+                linkedIn: 'https://www.linkedin.com/in/luanpontolio',
+                facebook: 'https://www.facebook.com/luan.pontolio'
+            }
+        };
+
+        const name = data.name;
+        const lastName = data.lastName;
+
+        console.log(name);
+        console.log(lastName);
+
+        // const { name, lastName } = data;
+        // console.log(name);
+        // console.log(lastName);
+
+        // const { facebook, twitter } = data.social;
+        // console.log(facebook);
+        // console.log(twitter);
+
+        // const { facebook: fb } = data.social;
+        // console.log(fb);
+
+        
+        // const { job = 'Developer' } = data;
+        // console.log(job);
+
+    </script>
+</body>
+</html>

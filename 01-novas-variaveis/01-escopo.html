@@ -7,22 +7,15 @@
     <title>Aula Escope</title>
 </head>
 <body>
-
-    <!--
-        Escopo: importante para entender as atribuições let e const.
-        Ele irá determinar quais as formas de acesso das nossas variaveis.
-    -->
     <script>
-        // declaração global
-        var animal;
+        var animal = 'dog';
 
-        function animal() {
-          // declara dentro do bloco {}
-          animal = 'cat';
+        function pet() {
+          var animal = 'cat';
           console.log(animal);   
         }
 
-        javascript();
+        pet();
 
         console.log(animal);
     </script>

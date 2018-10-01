@@ -10,28 +10,28 @@
     <script>
         // Multiplicar os elementos de todos os argumentos pelo multiplicador
         // Exemplo:
-        // function multiply(mult, arg1, arg2, arg3){
-        //     let arr = [];
-        //     arr.push(mult * arg1);
-        //     arr.push(mult * arg2)
-        //     arr.push(mult * arg3)
-            
-        //     return arr;
-        // }
 
-        // console.log(multiply(2, 1, 2, 3));
+        function multiply(mult, arg1, arg2, arg3){
+            let arr = [];
+            arr.push(mult * arg1);
+            arr.push(mult * arg2)
+            arr.push(mult * arg3)
+            
+            return arr;
+        }
+
+        console.log(multiply(2, 1, 2, 3));
 
         // Utilizando o spred operator podemos fazer o seguinte
         // Isto representa que podemos ter varios paramentros 
         // sendo passado para o metodo semelhante ao que temos no Ruby
         // method(one, two, *args)
-        function multiply(mult, ...args){
-            // args se torna um array com todos os outros parametros 
-            // que estão sendo passados.
-            return args.map(arg => mult * arg);
-        }
+       
+        // function multiply(mult, ...args){
+        //     return args.map(arg => mult * arg);
+        // }
 
-        console.log(multiply(2, 1, 2, 3, 4, 5, 6));
+        // console.log(multiply(2, 1, 2, 3, 4, 5, 6));
 
     </script>
 </body>

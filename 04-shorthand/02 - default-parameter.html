@@ -8,15 +8,12 @@
 </head>
 <body>
     <script>
-        // No es5 se não passarmos os paramentro vejam o que ele irá printar 
-        // no console `undefinied`. Uma opção era criarmos valores default da seguinte 
-        // maneira.
-        // function hello(name, surname) {
-        //     name = name || 'Luan';
-        //     surname = surname || 'Silveira';
+        function hello(name, surname) {
+            name    = name || 'Luan';
+            surname = surname || 'Silveira';
 
-        //     console.log(`Olá eu sou o ${name} ${surname}`);
-        // }
+            console.log(`Olá eu sou o ${name} ${surname}`);
+        }
 
         // hello();
         // > Olá eu sou Luan Silveira

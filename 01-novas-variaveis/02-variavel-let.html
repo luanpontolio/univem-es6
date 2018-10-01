@@ -8,15 +8,11 @@
 </head>
 <body>
     <script>
-        // "var" são chamadas de function scoped.
         var animal = 'cat';
         console.log(animal);
-        // Declarar uma variavel do tipo let com o mesmo nome vai apresentar o seguinte erro:
-        // Identifier 'animal' has already been declared
+
         // let animal = 'cat';
 
-        // Agora quando declaramos a variavel let dentro de um bloco {} ai mudamos seu escopo e
-        // se fizermos um console.log(animal) veja os resultados
         {
             let animal = 'dog';
             console.log(animal);
