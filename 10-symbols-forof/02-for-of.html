@@ -8,28 +8,21 @@
 </head>
 <body>
     <script>
-        // Pequenas diferenças
-        // iterable = são elemento dos quais podemos iterar
-        // iterators = são as formas que podemos iterar.
-        // const array = [1,2,3,4,5,6];
+        const txt = 'Univem';
+        const it  = txt[Symbol.iterator](); 
+        console.log(it.next());
 
-        const txt = 'Luan';
-        const it = txt[Symbol.iterator](); // realiza a a chamada do método de dentro iterator
+        // Função geradoras 
+        console.log(it.next());
+        console.log(it.next());
+        console.log(it.next());
+        // Apenas quando o valor for undefined ele retornara a chave done: false.
+        console.log(it.next()); 
 
-        // o que possibilita acessar o método
-        console.log(it.next());
-        console.log(it.next());
-        console.log(it.next());
-        console.log(it.next());
-        console.log(it.next()); // Apenas quando o valor for undefined ele retornara a chave done: false.
-
-        // Sendo assim podemos utilizar o loop for..of
-        // um loop mais inteligente que permite agente parar sua execução
-        // até o momento que encontrarmos algo.
-        for(letter of txt){
-            console.log(letter);
-            if(letter === 'a') break;
-        }
+        // for(letter of txt){
+        //     console.log(letter);
+        //     if(letter === 'v') break;
+        // }
 
     </script>
 </body>

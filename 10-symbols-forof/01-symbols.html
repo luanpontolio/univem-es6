@@ -7,35 +7,26 @@
     <title>Symbols</title>
 </head>
 <body>
-    <script>
-        // O symbol é um tipo de dado único e imutável e 
-        // pode ser usado como um identificador para propriedades de objeto(como em Ruby)
-        // para que evitemos colisões com outras propriedades.
+    <script>        
         let symbol = Symbol("name");
         console.log(symbol);
 
-        // Mesmo se criarmos symbolos com o mesmo nome
-        // a sua identificação será diferente, exemplo.
 
-        let symbol2 = Symbol("name");
-        console.log(symbol == symbol2);
+        // let symbol2 = Symbol("name");
+        // console.log(symbol == symbol2);
 
-        // Vamos criar um objeto com com chaves sendo simbolos
+        // let obj = {
+        //     [Symbol('name')]: "Luan",
+        //     [Symbol('age')]: 25,
+        //     city: "Marília"
+        // }
 
-        let obj = {
-            [Symbol('name')]: "Luan",
-            [Symbol('age')]: 25,
-            city: "Marília"
-        }
+        // Somente considera city como propridade normal.
+        // console.log(Object.keys(obj));
 
-        // Se imprimirmos as chaves deste objeto somente city sera exibida,
-        // pois ele só considera city como propriedade normal deste objeto
-        console.log(Object.keys(obj));
-
-        // Se quisermos exibir o que é simbolos temos a seguinte função
-        // Object.getOwnPropertySymbols
-        const symbol_values = Object.getOwnPropertySymbols(obj).map((symb) => obj[symb])
-        console.log(symbol_values);
+       
+        // const symbol_values = Object.getOwnPropertySymbols(obj).map((symb) => obj[symb])
+        // console.log(symbol_values);
     </script>
 </body>
 </html>

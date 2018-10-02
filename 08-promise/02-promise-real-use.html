@@ -8,23 +8,16 @@
 </head>
 <body>
     <script>
-        // Star Wars API, utilizando o método .fetch novo método do es6 que 
-        // é um método ajax.
         var swApiPeople = fetch("https://swapi.co/api/people/?format=json");
-
-        // Status da promises:
-        // -> pending;
-        // -> resolved;
-        // -> reject;
 
         // console.log(swApiPeople);
 
-        swApiPeople
-                  .then(data => data.json())
-                  .then((data) => data.results)
-                  .then(data => data.map(item => item.name))
-                  .then(data => console.log(data))
-                  .catch(error => error);
+        // swApiPeople
+        //           .then(data => data.json())
+        //           .then((data) => data.results)
+        //           .then(data => data.map(item => item.name))
+        //           .then(data => console.log(data))
+        //           .catch(err => console.error(err));
 
     </script>
 </body>
