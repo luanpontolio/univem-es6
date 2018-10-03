@@ -8,23 +8,43 @@
 </head>
 <body>
     <script>
+
         let obj1 = {
             name: 'Luan',
             age: 25
         }
+
 
         let obj2 = {
             name: 'Lucas',
             age:21
         }
 
-        // Assim como o WeakSet o WeakMap não é um iterator
-        // porem no WeakMap a refereça são mantidas fracamente, pois se deletarmos
-        // alguns dos objetos do escopo o garbage collection(GC) irá deleta-lo.
         let wm = new WeakMap();
         
         wm.set(obj1, "Info luan")
         wm.set(obj2, "Info lucas")
+
+
+        // Quando usar
+        const People = (function(){
+
+            var data = new WeakMap();
+
+            function People(name){
+                data.set(this, { name: name })
+            }
+
+            People.prototype.getName = function() {
+                return data.get(this).name;
+            }
+
+            return People;
+        }());
+
+        const people = new People('Luan');
+        console.log(people.name) // undefined
+        console.log(people.getName()) // Luan
     </script>
 </body>
 </html>

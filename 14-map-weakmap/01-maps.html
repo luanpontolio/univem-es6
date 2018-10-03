@@ -8,11 +8,23 @@
 </head>
 <body>
     <script>
-        let m = new Map();
 
-        m.set('luan', 25);
-        m.set('lucas', 22);
-        m.set('pedro', 26);
+        let map = new Map();
+        
+        map.set('steve', 35);
+        map.set('tony', 50);
+        map.set('bruce', 45);
+
+        map.delete('bruce');
+
+        map.has('tony');
+
+        let it = map.keys();
+
+        for(name of it) {
+            console.log(value)
+        }
+
     </script>
 </body>
 </html>
