@@ -9,29 +9,33 @@
 <body>
     <script>
         // Object entries
-        const animals = {
-            dog: 4,
-            cat: 2,
-            fish: 5
+
+        const lj = {
+            superman: 'Metrópolis',
+            batman: 'Ghotam',
+            ww: 'Themyscira'
         }
 
-        // Antes
-        console.log(Object.keys(animals));
+        Object.entries(lj)
 
         // Agora
         // Object.entries irá transformar o objeto em uma Array de Arrays
         // transformando sua chave no primeiro elemento do array e o valor no segundo
         // exemplo: [["dog", 3]...]
-        console.log(Object.entries(animals));
+        console.log(Object.entries(lj));
 
         // Utilizando o object.entries que irá gerar um array de com chave e valor
-        // assim é possível utilizar o Map para navagar no array utilizando seus métodos. 
-        const animalsMap = new Map(Object.entries(animals));
+        // assim é possível utilizar o Map para navagar no array utilizando seus métodos.
 
-        console.log(animalsMap.size);
-        console.log(animalsMap.has('cat'));
-        console.log(animalsMap.has('bird'));
-        console.log(animalsMap.get('dog'));
+
+        const ljMap = new Map(Object.entries(lj));
+
+        console.log(ljMap.size);
+        console.log(ljMap.has('superman'));
+        console.log(ljMap.has('batman'));
+        console.log(ljMap.get('ww'));
+
+        
     </script>
 </body>
 </html>

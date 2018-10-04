@@ -19,7 +19,7 @@
         const something = 'Bolacha';
         const otherthing = 'TI';
 
-        function blue(template, ...values){
+        function tagged(template, ...values){
             return template.reduce((accumulator, part, i) => {
                 return `
                     ${accumulator}
@@ -29,7 +29,7 @@
             })
         }
         
-        const text = blue`Eu moro em ${city}, cidade da ${something} e da ${otherthing}!`;
+        const text = tagged`Eu moro em ${city}, cidade da ${something} e da ${otherthing}!`;
 
         document.body.innerHTML = text;
     </script>
