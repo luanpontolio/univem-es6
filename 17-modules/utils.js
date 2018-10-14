@@ -14,7 +14,8 @@
 // // apenas podemos ter um default por arquivo.
 // export default sum;
 
-class Calculator {
+// class Calculator {
+export default class {
 	constructor(){}
 
 	sum(a, b){
@@ -34,4 +35,4 @@ class Calculator {
 	}
 }
 
-export default Calculator;
+// export default Calculator;

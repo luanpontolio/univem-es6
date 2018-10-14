@@ -2,7 +2,6 @@
 // * carrega tudo da lib
 // as => alias para utiliza o metodo(novo nome)
 
-
 // import * as R from 'ramda';
 // import { union , map } from 'ramda';
 import { union as juntoTudo, map as itMap } from 'ramda';
